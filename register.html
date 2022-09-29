@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome! Register Here</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            box-sizing: border-box;
+        }
+        .logo{
+            /* position: absolute; */
+            width: 100px;
+            padding-left: 20px;
+        }
+        .logo img{
+            max-width: 100%;
+        }
+        p{
+            text-align: center;
+            color: white;
+            font-size: 13px;
+        }
+        body{
+           background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(61, 143, 236, 0.6)),url(./Images/register.jpg);
+            background-position: center;
+            background-size: cover; 
+        }
+        .form-box{
+            width: 100%;
+            padding: 40px 15px;
+        }
+        form{
+            max-width: 600px;
+            margin: 40px auto;
+            color: white;
+        }
+        fieldset{
+            padding: 30px 30px 0;
+            margin-bottom: 10px;
+            border: 1px solid white;
+        }
+        legend{
+            font-weight: bold;
+            text-align: center;
+            color: white;
+        }
+        label{
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10px;
+            transition: 0.2s;
+        }
+        input:focus~label, input:valid~label, #college~label{
+            top: -30px;
+        }
+        input:required~label::after{
+            content: ' *';
+        }
+        .input-group{
+            display: inline-block;
+            height: 50px;
+            width: 49.5%;
+            margin-bottom: 15px;
+            position: relative;
+        }
+        input, select{
+            padding: 10px;
+            outline: none;
+            border: 1px solid white;
+            background: transparent;
+            font-size: 15px;
+            color: white;
+            width: 100%;
+            height: 40px;
+        }
+        input[type=radio]{
+            width: unset;
+            height: unset;
+        }
+        .gender{
+            border: 1px solid white;
+            display: inline-block;
+            padding: 9.5px 25px;
+        }
+        .gender input{
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+        ::placeholder{
+            color: white;
+        }
+        option, optgroup{
+            color: #17212f;
+        }
+        input[type=range], input[type=file], input[type=color]{
+            padding: 10px 5px;
+            margin-bottom: 10px;
+        }
+        .other{
+            position: relative;
+        }
+        .other label{
+            position: static !important;
+        }
+        .other output{
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        input[disabled]{
+            text-align: center;
+            background-color: white;
+            color: #17212f;
+            margin: 0 0 10px;
+        }
+        input[type=submit], input[type=reset]{
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        input:focus, select:focus{
+            border: 1px solid #b42525 !important;
+        }
+        @media (max-width: 700px){
+            .input-group, .gender{
+                width: 100%;
+            }
+            .gender{
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-box">
+        <div class="logo">
+            <a href="index.html"><img src="Images/logo.png" ></a>
+        </div>
+        <p>Fields marked with * are required</p>
+        <form action="#" method="POST" autocomplete= "off" enctype="multipart/form-data">
+            <fieldset>
+                <legend>Personal Details</legend>
+                    <div class="input-group">
+                        <input type="text" name="fname" id="fname" required tabindex="1" accesskey="N" maxlength="15">
+                        <label for="fname">First Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" name="lname" id="lname" required maxlength="15">
+                        <label for="lname">Last Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="date" name="dob" id="dob">
+                    </div>
+                    <div class="input-group">
+                        <input type="tel" name="pno" id="pno" pattern="[6-9]{1}[0-9]{9}" required>
+                        <label for="pno">Phone Number</label>
+                    </div>
+                    <div class="input-group">
+                        <label for="gender" style="position: static;">Gender</label>
+                        <div class="gender">
+                            <input type="radio" name="gender" id="gender" value="M" tabindex="-1">Male
+                            <input type="radio" name="gender" id="gender" value="F" tabindex="-1">Female
+                            <input type="radio" name="gender" id="gender" value="O" tabindex="-1">Others
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="college" style="position: static;">College</label>
+                        <input type="text" name="college" id="college" value="PGDAV(M)" readonly>
+                    </div>
+            </fieldset>
+            <fieldset>
+                <legend>Academic Details</legend>
+                <div class="input-group">
+                    <input list="course" name="courses" id="courses" required>
+                    <label for="courses">Course</label>
+                    <datalist id="course">
+                            <option value="B.A. Programme">
+                            <option value="B.A. (Hons) English">
+                            <option value="B.A. (Hons) Economics">
+                            <option value="B.A. (Hons) Hindi">
+                            <option value="B.A. (Hons) History">
+                            <option value="B.A. (Hons) Political Science">
+                            <option value="B.A. (Hons) Sanskrit">
+                            <option value="B.Com. (Hons)">
+                            <option value="B.Com. Programme">
+                            <option value="B.Sc. (Hons) Mathematics">
+                            <option value="B.Sc. (Hons) Statistics">
+                            <option value="B.Sc. (Hons) Computer Science">
+                            <option value="B.Sc. Mathematical Science">
+                    </datalist>
+                </div>
+                <div class="input-group">
+                    <select name="semester" id="semester">
+                        <option selected>Semester</option>
+                        <optgroup label="First Year">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </optgroup>
+                        <optgroup label="Second Year">
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </optgroup>
+                        <optgroup label="Third Year">
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <input type="number" name="croll" id="croll" min="14651" max="14710" required>
+                    <label for="croll">College Roll Number</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" name="uroll" id="uroll" required>
+                    <label for="uroll">University Roll Number</label>
+                </div>
+                <div class="other">
+                    <label for="marks">Last semester CGPA</label>
+                    <input type="range" name="marks" id="marks" min="3" max="10" step="0.1" value="6" oninput="this.nextElementSibling.value=this.value">
+                    <output>6</output>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Account Details</legend>
+                <div class="input-group">
+                    <input type="text" name="username" id="username" required accesskey="U">
+                    <label for="username">Username</label>
+                </div>
+                <div class="input-group">
+                    <input type="url" name="linkedin" id="linkedin" required>
+                    <label for="linkedin">Linkedin Profile Url</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password" id="password" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,}$" required accesskey="P" 
+                    title="Your password must be at least 8 characters long and contain at least: 
+1 Uppercase Letter
+1 Lowercase Letter
+1 Special Symbol [!@#$%^&*_=+-]
+1 Number">
+                    <label for="password">Password</label>
+                </div>
+                <div class="input-group">
+                    <input type="email" name="email" id="email" required accesskey="M">
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-group other">
+                    <label for="profile">Upload Profile Picture</label>
+                    <input type="file" name="profile" id="profile" accept=".jpg, .png, .jpeg">
+                </div>
+                <div class="input-group other">
+                    <label for="resume">Upload Resume</label>
+                    <input type="file" name="resume" id="resume" accept=".pdf, .docx"> 
+                </div>
+                <div class="other">
+                    <label for="color">Choose Your Theme</label>
+                    <input type="color" name="color" id="color">
+                </div>
+                
+            </fieldset>
+            <input value="By proceeding, I agree to Terms and Conditions. " disabled>
+            <input type="submit" value="Submt">
+            <input type="reset" value="Reset">
+        </form>
+    </div>
+</body>
+</html>
