@@ -1,1 +1,2 @@
-# Frontend_Website
+# College Website Prototype
+(FrontEnd Only Using HTML and CSS)
